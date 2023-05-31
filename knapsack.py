@@ -7,8 +7,10 @@ def knapsack(n, uang):
         # Jika hasil terdapat pada array (telah dikalkulasi sebelumnya), return hasil tersebut
         return arr[n][uang]
     if n < 0:
-        hasil = 0
+        # Jika seluruh buah telah di cek
+        hasil = 0 
     elif harga[n] > uang:
+        # Jika harga buah > sisa uang
         hasil = knapsack(n-1, uang)
     else:
         val1 = knapsack(n-1, uang)                      # Jika item tidak dimasukkan
