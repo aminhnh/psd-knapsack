@@ -19,11 +19,16 @@ def knapsack(n, uang):
     arr[n][uang] = hasil                                # Menyimpan hasil ke array
     return hasil
 
+# Harga dan kalori dari masing-masing buah dikalikan stoknya, dan disimpan di dalam list
 harga = 3*[2360] + 3*[2120] + 5*[1890] + 10*[3770] + 5*[2870]
 kalori = 3*[91] + 3*[71] + 5*[105] + 10*[103] + 5*[96]
+
+# n digunakan sebagai index untuk mengakses list harga dan list kalori (26 item) 
 n = len(harga)
 uang = 25000
 
+# Array untuk menyimpan hasil
 arr = np.zeros((n, uang))
+
 hasil = knapsack(n-1, uang-1)
 print(hasil)
